@@ -1,3 +1,5 @@
+# Name: Maria Bano , Reg: sp23-bai-025
+# Name: Ahmed Hussain , Reg: sp23-bai-007
 class Product:
     def __init__(self, name, amount, price):
         self.name = name
