@@ -10,6 +10,19 @@ class Product:
             raise ValueError("Quantity must be greater than zero.")
         return self.price * quantity
 
+    def make_purchase(self, quantity):
+        # Handle the purchase process, update stock, and return the total cost
+        if quantity <= 0:
+            raise ValueError("Quantity must be greater than zero.")
+        if quantity > self.amount:
+            raise ValueError(f"Cannot purchase {quantity} units. Only {self.amount} left in stock.")
+        
+        total_cost = self.get_price(quantity)
+        self.amount -= quantity  # Update stock after purchase
+        print(f"Purchased {quantity} units of {self.name} for ${total_cost:.2f}")
+        print(f"Remaining stock: {self.amount} units")
+        return total_cost
+# Test the Product class
 # Test the Product class
 try:
     # Creating product
